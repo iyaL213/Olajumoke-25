@@ -1,0 +1,981 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Olajumoke ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #ffb6d9;
+      --pink-light: #ffd9ea;
+      --pink-dark: #e889b6;
+      --black: #050505;
+      --soft-black: #0d0d0d;
+      --grey: #a8a8a8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,182,217,.08), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255,182,217,.06), transparent 30%);
+      z-index: -2;
+    }
+
+    /* FLOATING HEARTS */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -30px;
+      color: var(--pink);
+      opacity: 0;
+      animation: floatHeart linear infinite;
+      filter: drop-shadow(0 0 8px rgba(255,182,217,.5));
+    }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(0) rotate(0deg) scale(.7); opacity: 0; }
+      15% { opacity: .7; }
+      80% { opacity: .4; }
+      100% { transform: translateY(-110vh) rotate(25deg) scale(1.2); opacity: 0; }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 40px 22px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: fadeUp 1.5s ease forwards;
+    }
+
+    .hero h1 {
+      font-family: "Great Vibes", cursive;
+      color: var(--pink);
+      font-size: clamp(60px, 17vw, 130px);
+      font-weight: 400;
+      line-height: .9;
+      text-shadow: 0 0 15px rgba(255,182,217,.35), 0 0 50px rgba(255,182,217,.15);
+    }
+
+    .hero h2 {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-size: clamp(45px, 13vw, 85px);
+      color: var(--pink);
+      margin-top: 25px;
+      letter-spacing: 1px;
+      position: relative;
+      animation: birthdayGlow 2.5s ease-in-out infinite;
+      text-shadow: 0 0 8px #fff, 0 0 18px var(--pink), 0 0 35px var(--pink-dark), 0 0 65px rgba(255,95,162,.8);
+    }
+
+    @keyframes birthdayGlow {
+      0%, 100% {
+        opacity: .85;
+        transform: scale(1);
+        text-shadow: 0 0 8px #fff, 0 0 18px var(--pink), 0 0 35px var(--pink-dark), 0 0 65px rgba(255,95,162,.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.04);
+        text-shadow: 0 0 12px #fff, 0 0 25px var(--pink), 0 0 50px var(--pink-dark), 0 0 90px rgba(255,95,162,.8);
+      }
+    }
+
+    .birthday-sparkle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px white, 0 0 20px var(--pink);
+      animation: birthdaySparkle 1.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .birthday-sparkle::before,
+    .birthday-sparkle::after {
+      content: "";
+      position: absolute;
+      background: white;
+    }
+
+    .birthday-sparkle::before {
+      width: 1px;
+      height: 18px;
+      left: 2px;
+      top: -7px;
+    }
+
+    .birthday-sparkle::after {
+      width: 18px;
+      height: 1px;
+      left: -7px;
+      top: 2px;
+    }
+
+    .bs1 { top: 40%; left: 17%; }
+    .bs2 { top: 35%; right: 17%; animation-delay: .4s; }
+    .bs3 { top: 47%; left: 27%; animation-delay: .8s; }
+    .bs4 { top: 45%; right: 28%; animation-delay: 1.2s; }
+    .bs5 { top: 28%; left: 50%; animation-delay: 1.5s; }
+
+    @keyframes birthdaySparkle {
+      0%, 100% { opacity: .15; transform: scale(.5) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.5) rotate(45deg); }
+    }
+
+    .date {
+      margin-top: 30px;
+      color: var(--grey);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--pink);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 22px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--pink);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      text-align: center;
+      font-size: clamp(38px, 9vw, 65px);
+      font-weight: 500;
+      margin-bottom: 50px;
+    }
+
+    /* VIDEOS */
+    .video-section {
+      padding-top: 30px;
+      padding-bottom: 80px;
+    }
+
+    .video-wrap {
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #080808;
+      border: 1px solid rgba(255,182,217,.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 0 40px rgba(255,182,217,.025);
+    }
+
+    .video-wrap video,
+    .video-wrap iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      background: #000;
+    }
+
+    .video-wrap video {
+      height: auto;
+      object-fit: cover;
+    }
+
+    .youtube-caption {
+      text-align: center;
+      color: var(--pink-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(22px, 5vw, 29px);
+      margin: 0 0 22px;
+    }
+
+    /* LOVE CARD */
+    .love-card {
+      background: linear-gradient(145deg, rgba(255,182,217,.09), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,182,217,.18);
+      border-radius: 25px;
+      padding: 45px 28px;
+      text-align: center;
+      box-shadow: 0 20px 70px rgba(0,0,0,.5), inset 0 0 40px rgba(255,182,217,.02);
+    }
+
+    .love-card .big-heart {
+      color: var(--pink);
+      font-size: 45px;
+      margin-bottom: 20px;
+      animation: heartbeat 1.8s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.15); }
+      30% { transform: scale(1); }
+    }
+
+    .love-card p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(22px, 5vw, 30px);
+      line-height: 1.6;
+      color: #f4f4f4;
+    }
+
+    /* REASONS */
+    .reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 15px;
+    }
+
+    .reason {
+      background: var(--soft-black);
+      border: 1px solid rgba(255,182,217,.13);
+      border-radius: 20px;
+      padding: 28px 15px;
+      text-align: center;
+      transition: .4s ease;
+    }
+
+    .reason:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,182,217,.5);
+      box-shadow: 0 15px 40px rgba(255,182,217,.08);
+    }
+
+    .reason span {
+      display: block;
+      color: var(--pink);
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .reason h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    /* MEMORY */
+    .memory {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      padding: 35px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.95), rgba(0,0,0,.1)),
+        radial-gradient(circle at center, #492d3c, #090909 70%);
+      border: 1px solid rgba(255,182,217,.18);
+    }
+
+    .memory-content { position: relative; z-index: 2; }
+
+    .memory-small {
+      color: var(--pink);
+      font-family: "Montserrat", sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .memory h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--pink);
+      font-size: clamp(48px, 10vw, 70px);
+      font-weight: 700;
+      line-height: 1.05;
+      margin: 10px 0 20px;
+      text-shadow: 0 0 18px rgba(255,182,217,.18);
+    }
+
+    .memory p {
+      color: #ddd;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* MEMORY VIDEOS */
+    .memory-videos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .memory-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: #000;
+      border-radius: 18px;
+      border: 1px solid rgba(255,182,217,.18);
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+    }
+
+    /* SURPRISE GAME */
+    .surprise {
+      text-align: center;
+      max-width: 1000px;
+    }
+
+    .game-intro {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(24px, 5vw, 32px);
+      color: var(--pink-light);
+      line-height: 1.5;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .game-counter {
+      color: var(--grey);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .heart-game {
+      position: relative;
+      width: 100%;
+      height: 62svh;
+      min-height: 430px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,182,217,.18);
+      background: radial-gradient(circle at center, rgba(255,182,217,.08), transparent 55%), #080808;
+      box-shadow: inset 0 0 80px rgba(255,182,217,.03);
+    }
+
+    .game-heart {
+      position: absolute;
+      border: none;
+      background: transparent;
+      color: var(--pink);
+      font-size: 42px;
+      padding: 14px;
+      cursor: pointer;
+      z-index: 5;
+      filter: drop-shadow(0 0 8px rgba(255,182,217,.9)) drop-shadow(0 0 20px rgba(255,95,162,.6));
+      animation: gameHeartPulse 1.5s ease-in-out infinite;
+      transition: .3s;
+    }
+
+    .game-heart:hover { transform: scale(1.25); }
+
+    @keyframes gameHeartPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    .game-hint {
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    /* SURPRISE REVEAL */
+    #surpriseReveal {
+      display: none;
+      padding-top: 40px;
+    }
+
+    #surpriseReveal.show {
+      display: block;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .reveal-title {
+      font-family: "Great Vibes", cursive;
+      color: var(--pink);
+      text-align: center;
+      font-size: clamp(48px, 11vw, 75px);
+      margin-bottom: 45px;
+      text-shadow: 0 0 20px rgba(255,182,217,.35);
+    }
+
+    .surprise-card {
+      background: linear-gradient(145deg, rgba(255,182,217,.08), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,182,217,.18);
+      border-radius: 25px;
+      padding: 30px 22px;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .surprise-card h3 {
+      font-family: "Great Vibes", cursive;
+      color: var(--pink);
+      font-size: 42px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    /* PLAYLIST */
+    .playlist-button {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 15px 28px;
+      border: 1px solid var(--pink);
+      border-radius: 50px;
+      color: var(--pink);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: .4s;
+    }
+
+    .playlist-button:hover {
+      background: var(--pink);
+      color: #000;
+      box-shadow: 0 0 30px rgba(255,182,217,.25);
+    }
+
+    /* TICKET IMAGE */
+    .ticket {
+      position: relative;
+      padding: 15px;
+      border: 1px dashed var(--pink-dark);
+      border-radius: 18px;
+      background: rgba(255,182,217,.025);
+    }
+
+    .ticket-image {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 18px;
+      border: 1px solid rgba(255,182,217,.35);
+      box-shadow: 0 0 25px rgba(255,105,180,.15);
+    }
+
+    .ticket p {
+      color: #aaa;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .ticket-note {
+      color: var(--pink) !important;
+      font-size: 14px;
+      margin-top: 12px !important;
+    }
+
+    /* ENDING VIDEO */
+    .ending-section {
+      padding-top: 40px;
+      text-align: center;
+    }
+
+    .ending-heading {
+      font-family: "Great Vibes", cursive;
+      color: var(--pink);
+      font-size: clamp(48px, 12vw, 75px);
+      margin-bottom: 28px;
+      text-shadow: 0 0 20px rgba(255,182,217,.35);
+    }
+
+    .ending-video-wrap {
+      width: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(255,182,217,.2);
+      box-shadow: 0 20px 70px rgba(0,0,0,.55);
+    }
+
+    .ending-video-wrap video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 80px 20px 50px;
+      border-top: 1px solid rgba(255,182,217,.08);
+    }
+
+    footer .name {
+      font-family: "Great Vibes", cursive;
+      color: var(--pink);
+      font-size: 55px;
+    }
+
+    footer p {
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 15px;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      section { padding: 75px 18px; }
+      .love-card { padding: 35px 20px; }
+      .memory { min-height: 360px; padding: 25px; }
+      .reasons { grid-template-columns: repeat(2, 1fr); }
+      .memory-videos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .memory-video { border-radius: 14px; }
+      .heart-game { min-height: 55svh; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- FLOATING HEARTS -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="backgroundMusic" src="Music.mp3" loop preload="auto"></audio>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Olajumoke</h1>
+      <div class="birthday-sparkle bs1"></div>
+      <div class="birthday-sparkle bs2"></div>
+      <div class="birthday-sparkle bs3"></div>
+      <div class="birthday-sparkle bs4"></div>
+      <div class="birthday-sparkle bs5"></div>
+      <h2>Happy Birthday</h2>
+      <div class="date">12 October ♡</div>
+    </div>
+    <div class="scroll">↓ &nbsp; scroll slowly &nbsp; ↓</div>
+  </header>
+
+  <!-- BEGINNING VIDEO -->
+  <section class="video-section">
+    <div class="video-wrap">
+      <video controls playsinline preload="metadata">
+        <source src="Beginning .mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+    </div>
+  </section>
+
+  <!-- LOVE LETTER -->
+  <section>
+    <div class="section-label">LomLom, this is for you</div>
+    <div class="love-card">
+      <div class="big-heart">♥</div>
+      <p>
+        Three years, 42 days and counting… and I still see more reasons to love you deeper and deeper each day.
+      </p>
+      <p style="margin-top:20px;">
+        You have the most beautiful soul, a heart full of kindness, and a face I could look at forever.
+      </p>
+    </div>
+  </section>
+
+  <!-- REASON 1 VIDEO -->
+  <section class="video-section">
+    <div class="video-wrap">
+      <video controls playsinline preload="metadata">
+        <source src="Reason 1.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+    </div>
+  </section>
+
+  <!-- THINGS THAT MAKE YOU SPECIAL -->
+  <section>
+    <div class="section-label">A FEW THINGS THAT MAKE YOU SPECIAL ♡</div>
+    <div class="reasons">
+      <div class="reason"><span>♡</span><h3>Your kindness</h3></div>
+      <div class="reason"><span>✦</span><h3>Your beautiful soul</h3></div>
+      <div class="reason"><span>♡</span><h3>Such hardworking babe</h3></div>
+      <div class="reason"><span>✧</span><h3>Your beautiful face</h3></div>
+      <div class="reason"><span>♥</span><h3>Your sexy body</h3></div>
+      <div class="reason"><span>♡</span><h3>Your imperfection</h3></div>
+    </div>
+  </section>
+
+  <!-- MEMORY -->
+  <section>
+    <div class="section-label" style="font-family:'Great Vibes',cursive;color:var(--pink);font-size:clamp(35px,8vw,55px);letter-spacing:0;text-transform:none;">
+      My favourite memory of us
+    </div>
+
+    <div class="memory">
+      <div class="memory-content">
+        <div class="memory-small">Somewhere special</div>
+        <h3>Southway</h3>
+        <p>
+          Some places become special because of what happened there.
+          And some memories become unforgettable because of who you shared them with.
+        </p>
+      </div>
+    </div>
+
+    <!-- FOUR MEMORY VIDEOS -->
+    <div class="memory-videos">
+      <video class="memory-video" controls playsinline preload="metadata">
+        <source src="Memory 1.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+
+      <video class="memory-video" controls playsinline preload="metadata">
+        <source src="Memory 2.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+
+      <video class="memory-video" controls playsinline preload="metadata">
+        <source src="Memory 3.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+
+      <video class="memory-video" controls playsinline preload="metadata">
+        <source src="Memory 4.mp4" type="video/mp4">
+        Your browser does not support this video.
+      </video>
+    </div>
+  </section>
+
+  <!-- 25 HEART SURPRISE GAME -->
+  <section class="surprise">
+    <div class="section-label">Few more things…</div>
+    <h2 class="section-title">Find your surprise ♡</h2>
+
+    <p class="game-intro">
+      Find your surprise by counting your age…
+      <br>
+      Find all 25 little hearts and I'll show you what I've prepared for you. ❤️
+    </p>
+
+    <div class="game-counter">
+      Hearts found: <span id="heartCount">0</span> / 25
+    </div>
+
+    <div class="heart-game" id="heartGame"></div>
+    <div class="game-hint">Tap the heart whenever you find one</div>
+  </section>
+
+  <!-- SURPRISE REVEAL: SHOWN AFTER ALL 25 HEARTS -->
+  <section id="surpriseReveal">
+    <div style="width:100%;">
+      <div class="reveal-title">You found them all ♡</div>
+
+      <!-- APPLE MUSIC PLAYLIST -->
+      <div class="surprise-card">
+        <h3>Our playlist 🎵</h3>
+
+        <p style="font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.5;color:#ddd;margin-bottom:20px;">
+          The songs that remind me of you and us.
+        </p>
+
+        <a
+          href="https://music.apple.com/gb/playlist/%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%8A%E9%99%B0%E3%81%A7%E7%A7%81%E3%81%AF%E7%94%9F%E3%81%8D%E7%94%B2%E6%96%90%E3%82%92%E6%84%9F%E3%81%98%E3%81%BE%E3%81%99/pl.u-DdAN85qt0zvg0V3"
+          class="playlist-button"
+          target="_blank"
+          rel="noopener noreferrer">
+          Open our Apple Music playlist →
+        </a>
+      </div>
+
+      <!-- UPDATED YOUTUBE BIRTHDAY TRIBUTE -->
+      <section class="video-section">
+        <div class="section-label">A little message from your people ♡</div>
+        <p class="youtube-caption">Everyone has something special to say to you</p>
+
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/nR2zLixnO90"
+            title="Birthday messages for Olajumoke"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+
+      <!-- ASAKE CONCERT TICKET IMAGE -->
+      <div class="surprise-card">
+        <h3>Your ticket, LomLom 🎟️❤️</h3>
+
+        <div class="ticket">
+          <img
+            src="asake-ticket.PNG"
+            alt="Asake Admissions concert ticket keepsake"
+            class="ticket-image"
+          >
+
+          <p>A night of music, memories and you. ❤️</p>
+          <p class="ticket-note">
+            One more beautiful memory for us to make together.
+          </p>
+        </div>
+      </div>
+
+      <!-- ENDING VIDEO -->
+      <div class="ending-section">
+        <div class="ending-heading">12 October ❤️</div>
+
+        <div class="ending-video-wrap">
+          <video id="endingVideo" controls playsinline preload="metadata">
+            <source src="Ending.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="name">Olajumoke</div>
+    <p>12 October ♡</p>
+  </footer>
+
+  <script>
+    /* FLOATING HEARTS */
+    const heartsContainer = document.getElementById("hearts");
+
+    function createFloatingHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = Math.random() > .5 ? "♥" : "♡";
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.fontSize = (10 + Math.random() * 20) + "px";
+      heart.style.animationDuration = (7 + Math.random() * 8) + "s";
+      heart.style.animationDelay = Math.random() * 2 + "s";
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 16000);
+    }
+
+    setInterval(createFloatingHeart, 900);
+
+    /* BACKGROUND MUSIC */
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    let musicStarted = false;
+    const normalVolume = 0.35;
+    const celebrationVolume = 0.50;
+
+    backgroundMusic.volume = normalVolume;
+
+    function startBackgroundMusic() {
+      if (musicStarted) return;
+
+      musicStarted = true;
+      backgroundMusic.volume = normalVolume;
+
+      backgroundMusic.play().catch(() => {
+        musicStarted = false;
+      });
+    }
+
+    document.addEventListener("pointerdown", startBackgroundMusic, { once: true });
+    document.addEventListener("touchstart", startBackgroundMusic, { once: true, passive: true });
+    document.addEventListener("scroll", startBackgroundMusic, { once: true, passive: true });
+
+    /* MUSIC FADE */
+    function fadeMusicTo(targetVolume, duration = 1200) {
+      if (backgroundMusic.paused && targetVolume > 0) {
+        backgroundMusic.volume = targetVolume;
+        return;
+      }
+
+      const startVolume = backgroundMusic.volume;
+      const difference = targetVolume - startVolume;
+      const startTime = performance.now();
+
+      function animateFade(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        backgroundMusic.volume = Math.max(
+          0,
+          Math.min(1, startVolume + difference * progress)
+        );
+
+        if (progress < 1) requestAnimationFrame(animateFade);
+      }
+
+      requestAnimationFrame(animateFade);
+    }
+
+    /* 25 HEART GAME */
+    const game = document.getElementById("heartGame");
+    const heartCount = document.getElementById("heartCount");
+    const surpriseReveal = document.getElementById("surpriseReveal");
+
+    let found = 0;
+    let lastLeft = 50;
+    let lastTop = 50;
+
+    function createGameHeart() {
+      const heart = document.createElement("button");
+      heart.className = "game-heart";
+      heart.innerHTML = "♡";
+      heart.setAttribute("aria-label", "Find the hidden heart");
+
+      let left;
+      let top;
+      let attempts = 0;
+
+      do {
+        left = 5 + Math.random() * 82;
+        top = 5 + Math.random() * 82;
+        attempts++;
+      } while (
+        Math.abs(left - lastLeft) < 15 &&
+        Math.abs(top - lastTop) < 15 &&
+        attempts < 30
+      );
+
+      lastLeft = left;
+      lastTop = top;
+
+      heart.style.left = left + "%";
+      heart.style.top = top + "%";
+
+      heart.addEventListener("click", function() {
+        found++;
+        heart.remove();
+        heartCount.textContent = found;
+
+        if (found < 25) {
+          createGameHeart();
+        } else {
+          finishGame();
+        }
+      });
+
+      game.appendChild(heart);
+    }
+
+    /* FINISH GAME AND REVEAL SURPRISE */
+    function finishGame() {
+      if (musicStarted) {
+        fadeMusicTo(celebrationVolume, 1000);
+      }
+
+      for (let i = 0; i < 25; i++) {
+        const celebration = document.createElement("div");
+        celebration.innerHTML = "♥";
+        celebration.style.position = "absolute";
+        celebration.style.left = Math.random() * 95 + "%";
+        celebration.style.top = Math.random() * 90 + "%";
+        celebration.style.color = "var(--pink)";
+        celebration.style.fontSize = (15 + Math.random() * 25) + "px";
+        celebration.style.opacity = ".65";
+        celebration.style.pointerEvents = "none";
+        game.appendChild(celebration);
+      }
+
+      setTimeout(function() {
+        surpriseReveal.classList.add("show");
+
+        setTimeout(function() {
+          surpriseReveal.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }, 500);
+      }, 800);
+    }
+
+    /* ENDING VIDEO MUSIC CONTROL */
+    const endingVideo = document.getElementById("endingVideo");
+
+    endingVideo.addEventListener("play", function() {
+      fadeMusicTo(0, 1200);
+
+      setTimeout(function() {
+        backgroundMusic.pause();
+      }, 1250);
+    });
+
+    endingVideo.addEventListener("ended", function() {
+      backgroundMusic.volume = 0;
+
+      backgroundMusic.play().then(() => {
+        fadeMusicTo(celebrationVolume, 1800);
+      }).catch(() => {
+        /* The page still works if automatic playback is blocked. */
+      });
+    });
+
+    /* START THE GAME */
+    createGameHeart();
+  </script>
+</body>
+</html>
